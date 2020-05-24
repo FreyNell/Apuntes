@@ -1,0 +1,31 @@
+Ecosistema de Hadoop, apuntes:
+
+1. La imagen del ecosistema de Hadoop es un diagrama de capas.
+
+2. Apache Hadoop HDFS: es un formato de partición del disco para poder trabajar optimamente con el cluster de Hadoop. Se centra en permitir escalabilidad de los datos particionados.
+
+3. Apache Hadoop YARN: planificador de tareas en el ecosistema de Hadoop.
+
+4. MapReduce: modelo de programación donde únicamente damos las funciones Map y Reduce.
+
+5. Apache Hive: Modelo de programación sobre MapReduce que involucra el algebra relacional. Es una infraestrcutura de almacenamiento de datos sobre hadoop que permite agrupar, consultar y analizar los datos. Su lenguaje de consulta es HiveQL que convierte las consultas a MapReduce de manera transparente. Indexa por Bitmaps para proveer velocidad. Permite almacenamiento de metadatos en base de datos relacionales para hacer mas faciles las consultas. Por defecto almacena datos en apache derby pero se puede configurar para que use MySQL.
+
+6. Apache Pig: Modelo de programación sobre MapReduce que involucra el modelado de flujo de datos. Lenguaje Pig Latin. Simplifica las tareas de programación por una simple secuencia de lineas de código que automáticamente se optimizan para realizar las operaciones MapReduce por debajo.
+
+7. Giraph: procesamiento eficiente de grafos a gran escala. Basado en el algoritmo Pregel.
+
+8. Apache Storm: usa Directed Acyclic Graph como topología, funcionando de manera similar a MapReduce pero permitiendo que su rutinas corran in-memory en tiempo real de Big Data debido a que corren indefinidamente hasta que sean detenidas.
+
+    ** Un Directed Acyclic Graph (DAG) es un grafo en el que no hay ciclos, es decir, ningúna flecha vuelve a un nodo anterior. Un ejemplo muy particular es un Arbol de decisiones.
+
+9. Apache Spark: Interfaz para la programación de clusters completos con paralelismo de datos implícito y tolerancia a fallos. También permite la ejecución de grafos. Tiene su propia implementación de SQL para consulta de datos estructurados. MLlib para implementar Machine Learning, GraphX para el procesamiento de grafos y Spark Streaming (da respuesta al procesamiento en tiempo real de forma escalable y tolerante a fallos).
+
+10. Apache Flink: recopila y transforma streaming de datos en tiempo real para procesamiento de datos a gran escala. Usa flujos de programación escritos en Python, Java o Scala.
+
+11. Cassandra: Base de datos no relacional que almacena datos distribuidos semiestructurados con pares clave-valor orientado a columnas permitiendo escalabilidad.
+
+12. Mongodb: Base de datos no relacional que almacena documentos distribuidos JSON (BSON) permitiendo escalabilidad.
+
+13. HBase: base de datos distribuidos no relacional que proporciona capacidades al estilo BigTable(google) para Hadoop (se utilizó como DB de mensajería para facebook).
+
+14. ZooKeeper: sincroniza y configura la interacción entre los diferente componentes del ecosistema Hadoop. Garantiza alta disponibilidad 
